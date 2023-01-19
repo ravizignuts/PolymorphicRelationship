@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('index');
 });
-Route::get('index',[mainController::class,'index']);
+//Route::get('index',[mainController::class,'index']);
+Route::controller(mainController::class)->group(function(){
+    Route::get('index','index');
+    Route::get('manytomany','ManyToMany');
+});

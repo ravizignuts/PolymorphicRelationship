@@ -1,7 +1,10 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Image;
+use App\Models\Tag;
+use App\Models\Video;
+use App\Models\Post;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,5 +23,10 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        Image::factory(10)->create();
+        Tag::factory(10)->create();
+        Video::factory(10)->create();
+        Post::factory(10)->create();
+        $this->call(postvideoseeder::class);
     }
 }
